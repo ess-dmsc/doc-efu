@@ -5,7 +5,7 @@ Step by step
 ------------
 
 You have built and launched the EFU and you believe that data should be
-flowing through it but you do not 'see' [#f1]_ any. Now what?
+flowing through it but you do not 'see' any [#f1]_ . Now what?
 
 In this case the first steps are to check that the EFU is running and reachable.
 
@@ -15,7 +15,9 @@ Is the EFU process running?
 .. code-block:: console
 
     $ ps aux | grep bifrost
-    username 54703  18.6  0.1 34604200  18724 s002  S+   12:39PM   0:02.06 ./bin/bifrost -f ../src/modules/bifrost/configs/bifrost.json --nohwcheck
+    username 54703  \.\.deleted info\.\. ./bin/bifrost -f ../src/modules/bifrost/configs/bifrost.json --nohwcheck
+
+In this case it looks like EFU is running the BIFROST instrument.
 
 
 Does it respond to commands?
@@ -47,22 +49,21 @@ Let's identify the process.
 .. code-block:: console
 
     $ lsof -Pni | grep -i udp
-    identitys  1062 mortenchristensen   23u  IPv4 0x223fceca89ffbf07      0t0  UDP *:*
-    identitys  1062 mortenchristensen   28u  IPv4 0x223fceca8948d527      0t0  UDP *:*
-    rapportd   1070 mortenchristensen    3u  IPv4 0x223fceca8a705b47      0t0  UDP *:*
+    identitys  1062 username   23u  IPv4 0x223cfeac89ffbf07      0t0  UDP *:*
+    identitys  1062 username   28u  IPv4 0x223cfeac8948d527      0t0  UDP *:*
+    rapportd   1070 username    3u  IPv4 0x223cfeac8a705b47      0t0  UDP *:*
     ...
-    ControlCe  1109 mortenchristensen    8u  IPv4 0x223fceca894a43c7      0t0  UDP *:*
-    bifrost   54703 mortenchristensen    3u  IPv4 0x223fceca894793c7      0t0  UDP *:9000
+    ControlCe  1109 username    8u  IPv4 0x223cfeac894a43c7      0t0  UDP *:*
+    bifrost   54703 username    3u  IPv4 0x223cfeac894793c7      0t0  UDP *:9000
 
-Here we see that bifrost is the one listening on UDP port 9000.
+Here we see that bifrost is the process listening on UDP port 9000.
 
-At this stage we are pretty sure that the EFU is up and running, listening for data
-(and commands) on the expected ports. It is pretty likely that the problem is that
-it is either not receiving any data or is discarding the received data (due to
-misconfiguration).
+At this stage we are pretty sure that the EFU is up and running and listening
+for data (and commands) on the expected ports. It is pretty likely that the
+problem is that it is either not receiving any data or is discarding the
+received data (due to misconfiguration).
 
-Finally we can use the output of :ref:`efustat` to distinguish between these two
-scenarios:
+To distinguish between these two scenarios we use :ref:`efustat`:
 
 .. code-block:: console
 
@@ -82,14 +83,25 @@ number of reasons for this.
 * Data is being sent but EFU MTU is too small
 * Data is being sent but to wrong UDP port
 
-The typical investigation approaches this starting from the end of the list.
+A typical investigation approaches this list in turn starting from the end of
+the list.
 
+However the last three can be checked in one go using network capture tools
+such as Wireshark or tcpdump.
 
+It is outside the scope of this document to provide a tutorial for these tools,
+but the things to look out for when viewing the raw data are:
 
+* Is UDP data being captured? If so to which destination port?
+* What is the size of the data? (if > 1500 bytes, check MTU)
+* Does the destination IP address match the IP address of the EFU?
+* Is the source IP address valid?
+* Does the destination MAC address match the MAC address of the EFU interface?
+* Is the source MAC address valid?
 
-
-
-
+If you can capture seemingly valid data with wireshark but still do not get
+data into the EFU it could be because you have firewall rules causing the data
+to be dropped.
 
 .. rubric:: Footnotes
 

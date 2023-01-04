@@ -49,3 +49,4 @@ to Apache Kafka [#f3]_ .
     :hidden:
 
     troubleshoot
+    network
