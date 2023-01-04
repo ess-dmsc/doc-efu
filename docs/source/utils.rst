@@ -5,6 +5,14 @@ Utilities
 efustat
 -------
 
+The EFU has several 64bit counters for its internal processing state. These
+are normally published to Grafana where they are rendered as time-series data
+graphs.
+
+The runtime counters can be queried via the EFU command interface using a
+python tool (utils/efushell/efustats.py). It will provide a list of the
+Grafana metric name and values.
+
 .. code-block:: console
 
     $ python3 efustat.py -i 10.0.0.1 -p 8888
@@ -20,12 +28,17 @@ efustat
     STAT_GET efu.bifrost.0.thread.input_idle 41
     STAT_GET efu.bifrost.0.thread.processing_idle 246658
     STAT_GET efu.bifrost.0.transmit.bytes 0
-
+    ...
     STAT_GET efu.bifrost.0.main.uptime 4
+    $
 
 
 efustatus
 ---------
+
+There is also a status command (utils/efushell/efustatus.py) that returns
+additional information such as build information, detector module, available
+commands, etc.
 
 .. code-block:: console
 
@@ -50,7 +63,17 @@ efustatus
     b'efu.bifrost.0.receive.bytes'
     b'efu.bifrost.0.receive.dropped'
     ...
+    $
 
 
-QtEFU
------
+qtefu
+--------
+
+A Qt GUI (utils/qtrunefu/qtefu.py) to launch EFUs providing different configurations
+and quick launch.
+
+.. figure:: images/qtefu.png
+  :width: 800
+  :align: center
+
+  Qt based EFU launcher.
