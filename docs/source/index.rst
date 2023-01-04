@@ -1,51 +1,51 @@
 
-mjcgraph
-========
+Event Formation Unit
+====================
 
-**mjcgraph** is a Python library for creating, traversing and visualising
-graphs. It was inspired by the many graph-search related problems in Advent
-Of Code 2022 [#f1]_ and by the Algorithms Course [#f2]_ by Robert Sedgewick.
+The Event Formation Unit (EFU) [#f1]_ is the main component for the ESS [#f2]_ data path.
+It receives timestamped digitised readouts from neutron detectors and streams them
+to Apache Kafka [#f3_].
 
 
-.. figure:: images/graph.png
-  :width: 400
+.. figure:: images/efu_arch.png
+  :width: 800
   :align: center
 
-  Graphviz visualisation of an undirected graph loaded from 'mediumG.txt', courtesy
-  R. Sedgewick, Princeton.
+  High level architecture view of the EFU.
 
 
 
 .. note::
 
-   This is a test/hobby project under unpredictable development.
+    If you consider using this project you should be aware that the code is subject
+    to change without notice and that backwards compatibility is not guaranteed.
 
 
 
 .. rubric:: Footnotes
 
-.. [#f1] Advent Of Code 2022 - https://adventofcode.com/
-.. [#f2] Algorithms - https://algs4.cs.princeton.edu/home/>
-
-
-.. toctree::
-   :caption: Contributing
-   :maxdepth: 2
-   :hidden:
-
-   install
+.. [#f1] November 2018Journal of Instrumentation 13(11):T11002-T11002 - http://dx.doi.org/10.1088/1748-0221/13/11/T11002
+.. [#f2] European Spallation Source - https://www.ess.eu
+.. [#f2] October 2018Journal of Instrumentation 13(10):T10001-T10001 - http://dx.doi.org/10.1088/1748-0221/13/10/T10001
 
 .. toctree::
-   :caption: Documentation
-   :maxdepth: 2
-   :hidden:
+    :caption: Installation
+    :maxdepth: 2
+    :hidden:
 
-   classes
-   files
+    build
 
 .. toctree::
-  :caption: Examples
-  :maxdepth: 2
-  :hidden:
+    :caption: Running
+    :maxdepth: 2
+    :hidden:
 
-  usage
+    running
+    utils
+
+.. toctree::
+    :caption: Advanced
+    :maxdepth: 2
+    :hidden:
+
+    troubleshoot
