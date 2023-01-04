@@ -31,14 +31,14 @@ to Apache Kafka [#f3]_ .
 
 .. toctree::
     :caption: Installation
-    :maxdepth: 2
+    :maxdepth: 3
     :hidden:
 
     build
 
 .. toctree::
     :caption: Running
-    :maxdepth: 2
+    :maxdepth: 3
     :hidden:
 
     running
@@ -46,7 +46,7 @@ to Apache Kafka [#f3]_ .
 
 .. toctree::
     :caption: Advanced
-    :maxdepth: 2
+    :maxdepth: 3
     :hidden:
 
     troubleshoot
