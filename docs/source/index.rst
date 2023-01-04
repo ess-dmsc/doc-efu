@@ -2,8 +2,9 @@
 Event Formation Unit
 ====================
 
-The Event Formation Unit (EFU) [#f1]_ is the main component for the ESS [#f2]_ data path.
-It receives timestamped digitised readouts from neutron detectors and streams them
+The Event Formation Unit (EFU) [#f1]_ is the main component for the ESS [#f2]_
+data path. It receives timestamped digitised readouts from neutron detectors,
+converts them into ESS neutron events ({time, pixel} tuples) and streams these
 to Apache Kafka [#f3]_ .
 
 
