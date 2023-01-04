@@ -1,6 +1,7 @@
 Utilities
 =========
 
+.. _efustat:
 
 efustat
 -------

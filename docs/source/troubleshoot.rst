@@ -6,7 +6,7 @@ flowing through it but you do not 'see' [#f1]_ any.
 
 In this case the first step is to ensure that the EFU is running and reachable.
 
-Here you should use :ref:`utils/efustat`.
+Here you should use :ref:`efustat`.
 
 Network connectivity
 --------------------
