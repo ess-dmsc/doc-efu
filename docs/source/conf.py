@@ -8,7 +8,7 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'mjcgraph'
+project = 'Event Formation Unit'
 copyright = '2023, Morten Jagd Christensen'
 author = 'Morten Jagd Christensen'
 
