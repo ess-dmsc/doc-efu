@@ -4,7 +4,7 @@ Event Formation Unit
 
 The Event Formation Unit (EFU) [#f1]_ is the main component for the ESS [#f2]_ data path.
 It receives timestamped digitised readouts from neutron detectors and streams them
-to Apache Kafka [#f3_].
+to Apache Kafka [#f3]_ .
 
 
 .. figure:: images/efu_arch.png
