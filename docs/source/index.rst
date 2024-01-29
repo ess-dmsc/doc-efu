@@ -30,7 +30,7 @@ to Apache Kafka [#f3]_ .
 .. [#f3] October 2018 Journal of Instrumentation 13(10):T10001-T10001 - http://dx.doi.org/10.1088/1748-0221/13/10/T10001
 
 .. toctree::
-    :caption: Installation
+    :caption: Install
     :maxdepth: 3
     :hidden:
 

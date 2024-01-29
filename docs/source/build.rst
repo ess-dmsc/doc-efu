@@ -12,7 +12,9 @@ sufficient for successfully building the EFU software.
 Prerequisites
 -------------
 
-Conan, CMake - latest versions
+Conan - latest version less than 2.0
+CMake - latest version
+GCC - known to work with 11.2 and possible >= 8
 
 
 Build
