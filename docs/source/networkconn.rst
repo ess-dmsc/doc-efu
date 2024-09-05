@@ -1,5 +1,5 @@
-RM - EFU network connection
-===========================
+RMM Configuration
+=================
 
 The connection between RM and EFU is via a standard Ethernet interface.
 
@@ -33,4 +33,29 @@ figure below.
   Using tcpdump to prepare/validate network parameters
 
 
-  The key point is
+The key point is the command
+
+.. code-block:: console
+
+    $ sudo tcpdump -i p2p1 -nn -e udp port 9010
+
+which can be supplemented with further arguments. This command
+produces output similar to the figure above.
+
+Direction of communication is shown by '>'. For example
+
+
+.. code-block:: console
+
+    $ 0e:05:05:00:00:00 > 50:6b:4b:c0:a6:84
+
+    Device with MAC address 0e:05:05:00:00:00 is sending to device with
+    MAC address 50:6b:4b:c0:a6:84
+
+
+.. code-block:: console
+
+    $ 192.168.10.100.9001 > 192.168.10.1.9010: UDP
+
+    Host with IP address 192.168.10.100 is sending (UDP) data to host with IP
+    address 192.168.10.1. (Data ids UDP, destination port is 9010
