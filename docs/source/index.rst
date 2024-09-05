@@ -45,10 +45,16 @@ to Apache Kafka [#f3]_ .
     utils
 
 .. toctree::
+    :caption: RMM Configuration
+    :maxdepth: 3
+    :hidden:
+    
+    networkconn
+
+.. toctree::
     :caption: Advanced
     :maxdepth: 3
     :hidden:
 
     troubleshoot
-    networkconn
     network

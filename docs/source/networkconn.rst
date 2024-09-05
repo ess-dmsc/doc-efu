@@ -18,3 +18,19 @@ and one bad configuration (red line).
   :align: center
 
   Ethernet connection between RM and EFU.
+
+
+Debugging
+=========
+
+To check/validate your configuration you can use **tcpdump** as shown in the
+figure below.
+
+.. figure:: images/nwparms.png
+  :width: 1024
+  :align: center
+
+  Using tcpdump to prepare/validate network parameters
+
+
+  The key point is
