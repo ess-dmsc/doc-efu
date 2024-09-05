@@ -1,5 +1,5 @@
-RMM Configuration
-=================
+Network parameters
+==================
 
 The connection between RM and EFU is via a standard Ethernet interface.
 

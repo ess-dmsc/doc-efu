@@ -48,7 +48,7 @@ to Apache Kafka [#f3]_ .
     :caption: RMM Configuration
     :maxdepth: 3
     :hidden:
-    
+
     networkconn
 
 .. toctree::
