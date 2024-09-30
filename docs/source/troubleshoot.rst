@@ -9,6 +9,7 @@ flowing through it but you do not 'see' any [#f1]_ . Now what?
 
 In this case the first steps are to check that the EFU is running and reachable.
 
+
 Is the EFU process running?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -25,6 +26,20 @@ Does it respond to commands?
 
 Use :ref:`efustat` to check that the EFU is accepting commands
 and returning counter values.
+
+.. code-block:: console
+
+    $ python3 utils/efushell/efustats.py | grep -v " 0"
+
+    Available stats (75):
+    STAT_GET efu.bifrost.0.thread.input_idle 272
+    STAT_GET efu.bifrost.0.thread.processing_idle 1432793
+    STAT_GET efu.bifrost.0.produce.cause.timeout 27
+    STAT_GET efu.bifrost.0.kafka.ev_others 16
+    STAT_GET efu.bifrost.0.main.uptime 27
+
+If this case it seems like the BIFROST EFU is running, because it is responding
+to the status query.
 
 
 Verify the data port
