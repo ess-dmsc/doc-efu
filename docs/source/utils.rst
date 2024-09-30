@@ -7,7 +7,7 @@ efustat
 -------
 
 The EFU has several 64bit counters for its internal processing state. These
-are normally published to Grafana where they are rendered as time-series data
+are normally published to Grafana, where they are rendered as time-series data
 graphs.
 
 The runtime counters can be queried via the EFU command interface using a

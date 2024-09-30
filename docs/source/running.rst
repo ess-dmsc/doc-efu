@@ -49,16 +49,18 @@ The most important command line arguments are listed below
    * - --calibration file
      - calibration file
    * - -b broker
-     - kafka broker ('10.0.0.1:9092')
+     - kafka broker (ex. '10.0.0.1:9092')
+   * - -a logserver
+     - Graylog server (ex. '10.0.1.1')
    * - -g graphite
-     - graphite server ip ('10.0.0.2')
+     - graphite server ip (ex. '10.0.0.2')
    * - -p port
      - data port (UDP)
    * - -m port
      - command port (TCP)
 
 
-Generally the EFUs will complain (and exit) if insufficient options are given.
+Generally, the EFUs will complain (and exit) if insufficient options are given.
 
 To see all options for a given detector implementation, use the help option:
 
