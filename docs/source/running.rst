@@ -2,7 +2,8 @@ Running
 =======
 
 Once started, the EFU will not terminate on its own but will run indefinitely. At ESS
-is will be launched as a systemd process running in the background.
+is will be launched as a systemd process running in the background. However EFUs
+can be run from the command line.
 
 
 Start
@@ -14,13 +15,26 @@ like this
 .. code-block:: console
 
     $ cd event-formation-unit/build
-    $ ./bin/bifrost -f config.json --nohwcheck [more args]
+    $ ./bin/nmx -f ../src/modules/nmx/configs/nmx.json
 
 
-However for real applications more is needed.
+
+Most but not all detectors need both a configuration and a calibration file.
+In some cases calibration files can be omitted and a default calibration will
+be applied. In other cases you must specify a null calibration file yourself.
+
+.. code-block:: console
+
+    $ cd event-formation-unit/build
+    $ export cfgbase='../src/modules/bifrost/configs'
+    $ ./bin/bifrost -f $cfgbase/bifrost.json --calibration $cfgbase/bifrostnullcalib.json
 
 Arguments
 ---------
+
+For deployment in the ESS production environment more arguments are typically needed.
+For example several Kafka brokers should be added and servers for logging and metrics
+should also be supplied.
 
 The most important command line arguments are listed below
 
@@ -32,6 +46,8 @@ The most important command line arguments are listed below
      - description
    * - -f file
      - configuration file
+   * - --calibration file
+     - calibration file
    * - -b broker
      - kafka broker ('10.0.0.1:9092')
    * - -g graphite
@@ -42,8 +58,9 @@ The most important command line arguments are listed below
      - command port (TCP)
 
 
+Generally the EFUs will complain (and exit) if insufficient options are given.
 
-To see all options for a given detector implementation
+To see all options for a given detector implementation, use the help option:
 
 .. code-block:: console
 

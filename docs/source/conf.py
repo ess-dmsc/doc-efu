@@ -9,7 +9,7 @@ import sphinx_rtd_theme
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Event Formation Unit'
-copyright = '2023, Morten Jagd Christensen'
+copyright = '2024, Morten Jagd Christensen'
 author = 'Morten Jagd Christensen'
 
 # -- General configuration ---------------------------------------------------

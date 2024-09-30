@@ -28,4 +28,22 @@ Build
     $ cmake ..
     $ make
 
-This will build the EFU detector implementations and data generators.
+This will build the EFU detector executables (**bin/**) and data generators
+(**generators/**).
+
+Unit tests
+----------
+
+For building and running the unit tests
+
+.. code-block:: console
+
+    $ make unit_tests
+
+Unit test executables are located in **unit_tests/** and can be run individually
+or via the **runtest** target
+
+.. code-block:: console
+
+    $ make runtest               # or for example
+    $ ./unit_tests/Cluster2DTest
